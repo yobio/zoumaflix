@@ -1,0 +1,73 @@
+/* Styles spécifiques à la page de film */
+
+.banner {
+  height: 80px; /* Réduisez la hauteur de la bannière à 80 pixels */
+  margin-bottom: 20px; /* Réduisez la marge sous la bannière */
+}
+
+.banner img {
+  /* Modifiez les dimensions de l'image du logo si nécessaire */
+  height: 50px;
+  width: auto;
+}
+
+.film-section {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 100px; /* Ajoutez une marge en dessous de la section .film-section */
+}
+
+.film-poster {
+  width: 35%; /* Fixez la largeur de l'affiche à 35% de la largeur de la section */
+  margin-right: 6%; /* Ajoutez une marge à droite de l'affiche pour séparer les éléments */
+}
+
+.film-details {
+  width: 63%; /* Fixez la largeur des détails du film à 63% de la largeur de la section */
+}
+
+
+.btn {
+  background-color: #ee3523; /* Utilisez la couleur de fond de Netflix */
+  border: none; /* Enlevez la bordure */
+  color: white; /* Utilisez une couleur de texte blanche */
+  padding: 16px 0.8rem;
+  margin: 20px 0;
+  font-size: 14px; /* Modifiez la taille de police */
+  cursor: pointer; /* Changez le curseur lorsque la souris est sur le bouton */
+  transition: background-color 0.2s; /* Ajoutez une transition animée pour le changement de couleur lorsqu'il est survolé */
+}
+
+.btn:hover {
+  /* Modifiez l'apparence du bouton lorsqu'il est survolé */
+  background-color: #c62d1f;
+}
+
+.btn.disabled {
+  background-color: #403838;
+  cursor: default;
+}
+
+.btn i {
+  font-size: 1rem;
+}
+
+.btn * {
+  margin: 0 0.4rem
+}
+
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  padding: 1rem;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 16px rgba(0,0,0,0.8);
+  display:none;
+}
+

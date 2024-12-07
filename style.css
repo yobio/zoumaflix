@@ -1,0 +1,172 @@
+/* Couleurs */
+:root {
+  --red: #e50914;
+  --black: #222222;
+  --dark-grey: #333333;
+  --light-grey: #e6e6e6;
+}
+
+/* Polices */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+/* Style général */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--black);
+  color: var(--light-grey);
+  margin: 0;
+  padding: 0;
+}
+
+/* Titres */
+h1, h2, h3 {
+  font-weight: 700;
+  color: var(--light-grey);
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 20px;
+  margin: 0;
+}
+
+/* Liens */
+a {
+  color: var(--red);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Style de la bannière */
+.banner {
+  position: fixed;
+  z-index: 1000;
+
+  background-color: #ee3523;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  margin-bottom: 40px;
+
+  transition: height 0.5s ease;
+}
+
+.banner.expanded {
+  height: 200px;
+}
+
+.banner img {
+  height: 120px;
+  transition: height 0.5s ease;
+}
+
+.banner .header-actions {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 20px;
+  padding: 4px;
+}
+
+.banner .header-actions .button-container {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;  /* center icon horizontally */
+  align-items: center;      /* center icon vertically */
+}
+
+.banner .header-actions button {
+  border: none;
+  background: none;
+  color: black;
+
+  font-size: 32px;
+  vertical-align: middle;
+
+  transition: font-size 0.3s ease;
+}
+
+.banner .header-actions button:hover {
+  font-size: 36px;
+  vertical-align: middle;
+
+  cursor: pointer;
+}
+
+
+/* Style du contenu principal */
+.main-content {
+  padding: 20px;
+  padding-top: 260px;
+}
+
+/* Grille de films */
+.film-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  background-color: var(--dark-grey);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.film {
+  width: 200px;
+  flex-shrink: 0;
+  margin: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.film img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.film:hover img {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.film h3 a {
+  color: var(--light-grey);
+  text-decoration: none;
+  transition: color 0.2s ease-out;
+}
+
+.film h3 a:hover {
+  color: var(--red);
+}
+
+.film h3 {
+  margin-top: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Autres styles */
+/* ... */
+
