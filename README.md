@@ -1,1 +1,3 @@
-# 🍿 ZoumaFlix web interface
+# 🍿 ZoumaFlix api frontend
+
+Made with ChatGPT just for fun

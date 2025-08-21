@@ -1,24 +1,4 @@
-// Récupère tous les éléments de film
-const films = document.querySelectorAll('.film');
-
-// Pour chaque élément de film
-films.forEach(film => {
-  // Récupère le titre du film
-  const titre = film.querySelector('h3 a').textContent;
-  // Récupère l'URL du film
-  const url = film.querySelector('h3 a').getAttribute('href');
-
-  // Ajoute l'attribut title au film
-  film.setAttribute('title', titre);
-
-  // Ajoute un événement de clic sur l'élément de film
-  film.addEventListener('click', () => {
-    // Redirige vers la page du film
-    window.location.href = url;
-  });
-});
-
-
+/*
 window.addEventListener('scroll', () => {
   const banner = document.getElementById('banner');
   const bannerImg = document.getElementById('banner-img');
@@ -32,3 +12,35 @@ window.addEventListener('scroll', () => {
     bannerImg.style.height = '120px';
   }
 });
+*/
+
+
+updateBanner();
+window.addEventListener('scroll', updateBanner);
+
+function updateBanner() {
+  const banner = document.getElementById('banner');
+  const bannerImg = document.getElementById('banner-img');
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+  const maxTop = 0;
+  const minTop = 160;
+
+  let t = (scrollTop - maxTop) / (minTop - maxTop);
+  // clamp
+  if (t < 0) t = 0;
+  if (t > 1) t = 1;
+
+  // Hauteur entre 200px et 80px
+  const minHeight = 80;
+  const maxHeight = 200;
+  let newHeight = maxHeight - (maxHeight - minHeight) * t;
+
+  banner.style.height = `${newHeight}px`;
+
+  const minImgHeight = 50;
+  const maxImgHeight = 120;
+  let newImgHeight = maxImgHeight - (maxImgHeight - minImgHeight) * t;
+
+  bannerImg.style.height = `${newImgHeight}px`;
+}

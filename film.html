@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Titre du film - Application de streaming de films</title>
+  <title>Film - ZoumaFlix</title>
+  <link rel="shortcut icon" href="favicon.ico">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="film.css">
 
@@ -19,72 +20,45 @@
 
     <div class="header-actions">
         <!-- button dans un div pour eviter de decaler les autres lorsque sa taille augmente avec hover -->
-        <div class="button-container">
-            <button title="Rechercher"><i class="bi bi-search"></i></button>
-        </div>
+        <!--
         <div class="button-container">
             <button title="Profil"><i class="bi bi-person-circle"></i></button>
         </div>
+        -->
     </div>
   </header>
 
-  <main class="main-content">
+  <main class="main-content" id="main">
     <section class="film-section">
-      <img src="https://m.media-amazon.com/images/M/MV5BOTg0Mzc2MGQtYTRhNS00ZThmLTg2MmQtMDY3Zjk4YTNkZjRlXkEyXkFqcGdeQXVyMjA0MzYwMDY@._V1_.jpg" alt="Autant en emporte le vent" class="film-poster">
+      <img id="filmPoster" class="film-poster" alt="Affiche du film">
       <div class="film-details">
-        <h2>Autant en emporte le vent</h2>
-        <span class="film-date">1939</span>
-        <span class="film-duration">3h 58min</span>
-        <p class="film-director">Victor Fleming</p>
-        <p class="film-description">Description du film</p>
+        <h2 id="filmTitle"></h2>
+		<span class="legend"><i class="bi bi-calendar3"></i> <span id="filmDate"></span></span></br>
+        <span class="legend"><i class="bi bi-clock"></i> <span id="filmDuration"></span></span>
+        <p class="film-description" id="filmDescription"></p>
 
         <div class="film-actions">
-          <button class="btn btn-download disabled">
-            <i class="bi bi-cloud-download"></i>
-            <span>Télécharger</span>
-          </button>
-          <button class="btn btn-languages" target-popup="language-options">
-            <i class="bi bi-chat-square-text"></i>
-          </button>
-          <div class="popup" popup-id="language-options">
-            <div class="popup-content">
-              <h3>Sélectionner une langue</h3>
-              <select>
-                <option value="fr">Français</option>
-                <option value="en">Anglais</option>
-                <option value="es">Espagnol</option>
-              </select>
-            </div>
-          </div>
-
-
-
-          <button class="btn btn-delete">
-            <i class="bi bi-trash3"></i>
-            <span>Supprimer</span>
-          </button>
-          <button class="btn btn-watch">
+          <button class="btn red" id="btnWatch">
             <i class="bi bi-film"></i>
             <span>Regarder</span>
           </button>
         </div>
-      </div>
-    </section>
 
-    <section class="related-films-section">
-      <h2>Vous aimerez aussi</h2>
-      <div class="film-grid">
-        <div class="film">
-          <img src="https://m.media-amazon.com/images/M/MV5BMTc0MDEzOTg5MV5BMl5BanBnXkFtZTgwNDA4OTU0MTE@._V1_.jpg" alt="Affiche de Film 8">
-          <h3><a href="/films/film8">Il était une fois dans l'Ouest</a></h3>
-        </div>
-        <div class="film">
-          <img src="https://m.media-amazon.com/images/M/MV5BMTk0MzQwNDE4Ml5BMl5BanBnXkFtZTgwODQ4ODE5MDE@._V1_.jpg" alt="Affiche de Film 9">
-          <h3><a href="/films/film9">Le Bon, la brute, le truand</a></h3>
-        </div>
-        <!-- Ajoutez autant d'éléments de film que nécessaire -->
+		<div class="episodes-list" id="episodesContainer"></div>
       </div>
     </section>
+  </main>
+
+  <!-- Main pour le lecteur vidéo, caché par défaut -->
+  <main class="main-content" id="playerMain" style="display:none;">
+    <div class="player-header">
+      <button id="btnBack" class="btn-back">
+        <i class="bi bi-arrow-left"></i> Retour
+      </button>
+    </div>
+    <div class="iframe-container">
+      <iframe id="playerIframe" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
   </main>
 
   <script src="main.js"></script>
