@@ -6,27 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Film - ZoumaFlix</title>
   <link rel="shortcut icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="apple_touch_icon.png">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="film.css">
+  <link rel="stylesheet" type="text/css" href="globals.css">
+  <link rel="stylesheet" type="text/css" href="banner.css">
+  <link rel="stylesheet" type="text/css" href="search.css">
+  <link rel="stylesheet" type="text/css" href="colors.css">
+  <link rel="stylesheet" type="text/css" href="film.css">
 
   <!-- Incluez la feuille de style de Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 <body>
-  <header class="banner" id="banner" style="background-color: #ee3523;">
+  <header class="banner small" id="banner" style="background-color: #ee3523;">
     <a href="index.html">
       <img id="banner-img" src="logo.png" alt="Zoumaflix">
     </a>
-
-    <div class="header-actions">
-        <!-- button dans un div pour eviter de decaler les autres lorsque sa taille augmente avec hover -->
-        <!--
-        <div class="button-container">
-            <button title="Profil"><i class="bi bi-person-circle"></i></button>
-        </div>
-        -->
-    </div>
   </header>
 
   <main class="main-content" id="main">
@@ -34,18 +27,19 @@
       <img id="filmPoster" class="film-poster" alt="Affiche du film">
       <div class="film-details">
         <h2 id="filmTitle"></h2>
-		<span class="legend"><i class="bi bi-calendar3"></i> <span id="filmDate"></span></span></br>
+        <span class="legend"><i class="bi bi-calendar3"></i> <span id="filmDate"></span></span></br>
         <span class="legend"><i class="bi bi-clock"></i> <span id="filmDuration"></span></span>
         <p class="film-description" id="filmDescription"></p>
 
         <div class="film-actions">
-          <button class="btn red" id="btnWatch">
+          <button class="btn glass red" id="btnWatch">
             <i class="bi bi-film"></i>
             <span>Regarder</span>
           </button>
         </div>
 
-		<div class="episodes-list" id="episodesContainer"></div>
+        <div class="season-tabs" id="seasonTabs"></div>
+        <div class="episodes-list" id="episodesContainer"></div>
       </div>
     </section>
   </main>
@@ -53,11 +47,23 @@
   <!-- Main pour le lecteur vidéo, caché par défaut -->
   <main class="main-content" id="playerMain" style="display:none;">
     <div class="player-header">
-      <button id="btnBack" class="btn-back">
+      <button class="text-btn" id="btnBack">
         <i class="bi bi-arrow-left"></i> Retour
       </button>
+
+      <div class="dropdown">
+        <button class="btn small glass accent" id="btnSource">
+          Source: <span id="currentSource">vidlink.pro</span> <i class="bi bi-caret-down-fill"></i>
+        </button>
+        <div class="dropdown-content glass">
+          <button data-source="vidlink.pro">vidlink.pro</button>
+          <button data-source="vidsrc.me">vidsrc.me</button>
+          <button data-source="embed.su">embed.su</button>
+        </div>
+      </div>
     </div>
-    <div class="iframe-container">
+
+    <div id="playerContainer">
       <iframe id="playerIframe" src="" frameborder="0" allowfullscreen></iframe>
     </div>
   </main>

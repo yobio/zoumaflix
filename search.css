@@ -1,0 +1,55 @@
+/* Barre de recherche */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-container input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search-container input:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.search-box {
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+}
+
+.search-box input {
+  width: 100%;
+  max-width: 600px;
+  padding: 12px 50px 12px 20px; /* espace à droite pour l'icône */
+  font-size: 16px;
+  border-radius: 30px;
+  outline: none;
+
+  transition: all 0.3s ease;
+}
+
+.search-box input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search-box input:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* L’icône à l’intérieur du champ */
+.search-box .search-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none; /* pour que le clic passe sur l’input */
+}
+

@@ -1,0 +1,20 @@
+/* Style de la bannière */
+.banner {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  background-color: #ee3523;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  margin-bottom: 40px;
+}
+
+.banner img {
+  height: 120px;
+}

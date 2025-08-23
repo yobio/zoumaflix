@@ -36,25 +36,31 @@
 
 
 .btn {
-  background: rgba(238, 53, 35, 0.6);
-  border: 1px solid rgba(255, 150, 140, 0.2);
-  border-radius: 16px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  color: white;
-  padding: 12px 1rem;
-  margin: 20px 0;
   display: inline-flex;
   align-items: center;
+  padding: 12px 1rem;
+  margin: 20px 0;
+  border-radius: 16px;
   gap: 0.5rem;
   font-size: 14;
   cursor: pointer;
+
   transition: transform 0.2s ease, background 0.3s ease;
 }
 
 .btn:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+
+.btn.red:hover {
   background: rgba(238, 53, 35, 0.8);
   transform: translateY(-2px);
+}
+
+.btn.small {
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
 }
 
 .btn:disabled {
@@ -73,6 +79,24 @@
 }
 
 
+/* Onglets saisons */
+.season-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.season-tab {
+  margin: 0;
+}
+
+.season-tab.active {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+}
+
 /* Liste des épisodes */
 .episodes-list {
   margin-top: 2rem;
@@ -87,13 +111,7 @@
   align-items: flex-start;
   padding: 12px 16px;
   border-radius: 16px;
-  /* Effet "liquid glass" */
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(10px) saturate(180%);
-  -webkit-backdrop-filter: blur(10px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-  color: white;
+
   transition: transform 0.2s ease, background 0.3s ease;
 }
 
@@ -120,43 +138,72 @@
 }
 
 
-/* Style pour le lecteur vidéo */
-#iframe-container, .iframe-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh; /* plein écran */
-  padding: 1rem;
+#playerContainer {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  /* padding-top relatif à la largeur */
+  padding-top: 56.25%;
+  margin: auto;
   box-sizing: border-box;
 }
 
 #playerIframe {
-  width: 90%;
-  max-width: 1200px;
-  height: 80vh;
-  border-radius: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
   box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  border: none;
 }
+
 
 .player-header {
   display: flex;
   align-items: center;
   padding: 1rem;
+  gap: 1rem;
+  position: relative;
 }
 
-.btn-back {
-  background: none;
-  border: none;
+.player-header .dropdown {
+  margin-left: auto; /* pousse le dropdown à droite */
+  position: relative; /* nécessaire pour position:absolute des dropdown-content */
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* juste en dessous du bouton */
+  right: 0;  /* aligné au bouton */
+  border-radius: 18px;
+  margin-top: 0.5rem;
+  padding: 2px;
+  min-width: 150px; /* largeur minimale */
+  z-index: 10;
+  transform: translateY(-20px); /* margin de 20px du btn */
+}
+
+.dropdown-content button {
+  width: 100%;
+  padding: 0.4rem 1rem;
+  border-radius: 16px;
+  text-align: left;
   color: white;
-  font-size: 1.2rem;
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid rgba(255, 255, 255, 0);
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  transition: color 0.2s ease;
+
+  transition: all 0.3s ease;
 }
 
-.btn-back:hover {
-  color: #ff4747;
+.dropdown-content button:hover {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }

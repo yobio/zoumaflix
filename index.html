@@ -2,48 +2,30 @@
 <head>
   <title>Accueil - Zoumaflix</title>
   <link rel="shortcut icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="apple_touch_icon.png">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="ZoumaFlix">
-    
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="globals.css">
+  <link rel="stylesheet" type="text/css" href="banner.css">
+  <link rel="stylesheet" type="text/css" href="search.css">
+  <link rel="stylesheet" type="text/css" href="colors.css">
 
   <!-- Bootstrap icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-  <header class="banner expanded" id="banner" style="background-color: #ee3523;">
+  <header class="banner" id="banner" style="background-color: #ee3523;">
     <a href="index.html">
       <img id="banner-img" src="logo.png" alt="Zoumaflix">
     </a>
-
-    <div class="header-actions">
-      <!-- button dans un div pour eviter de decaler les autres lorsque sa taille augmente avec hover -->
-      <!--
-      <div class="button-container">
-        <button title="Profil"><i class="bi bi-person-circle"></i></button>
-      </div>
-      -->
-    </div>
   </header>
 
   <div class="main-content">
     <div class="search-container">
       <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Rechercher un film...">
+        <input type="text" class="glass accent" id="searchInput" placeholder="Rechercher un film...">
         <i class="bi bi-search search-icon"></i>
       </div>
     </div>
 
-    <div class="film-grid" id="filmGrid">
-      <!--
-      <div class="film">
-        <img src="https://m.media-amazon.com/images/M/MV5BZmU1MzlmOTMtZTNmMC00ZTA3LTkzMWMtOTc1MWNlMjFiYjFlXkEyXkFqcGc@._V1_.jpg" alt="Affiche de Film 5">
-        <h3><a href="./film.html">Diamants sur canapé</a></h3>
-      </div>
-      -->
-    </div>
+    <div class="film-grid glass" id="filmGrid"></div>
   </div>
   
   <script src="main.js"></script>

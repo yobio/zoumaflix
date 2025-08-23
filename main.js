@@ -1,25 +1,10 @@
-/*
-window.addEventListener('scroll', () => {
-  const banner = document.getElementById('banner');
-  const bannerImg = document.getElementById('banner-img');
-  const scrollTop = window.scrollY || document.documentElement.scrollTop;   // Get scroll position
-
-  if (scrollTop > 40) {
-    banner.style.height = '80px';
-    bannerImg.style.height = '50px';
-  } else {
-    banner.style.height = '200px';
-    bannerImg.style.height = '120px';
-  }
-});
-*/
-
-
 updateBanner();
 window.addEventListener('scroll', updateBanner);
 
 function updateBanner() {
   const banner = document.getElementById('banner');
+  if (banner.classList.contains('small')) return;
+
   const bannerImg = document.getElementById('banner-img');
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
