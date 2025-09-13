@@ -1,4 +1,4 @@
-let currentSource = "vidlink.pro"; // source par défaut
+let currentSource = "vidsrc.me"; // source par défaut
 
 document.addEventListener("DOMContentLoaded", initFilmPage);
 
